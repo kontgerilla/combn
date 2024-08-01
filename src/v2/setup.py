@@ -29,15 +29,14 @@ def create_config():
         "db_name": "combinations.db"
     }
     while True:
-        config_file = input("Enter config file name: ")
-        config_file += ".json"
+        config_file = "config.json"
         if not path.isfile(config_file):
             with open(config_file, 'w') as file:
                 dump(default_config, file)
             print("Config file created.")
             break
         else:
-            print("Config file already exists. Please enter a different name.")
+            print("Config file already exists.")
 # run this func if you want to create a new database
 while True:
     db_name = input("Enter database name: ")

@@ -6,6 +6,8 @@ from time import sleep
 from colorama import init, Fore, Style
 from os import system, listdir
 
+
+# Author: hunter discord: (kontragerillagdu)
 # Colorama initialization
 init(autoreset=True)
 
@@ -82,7 +84,7 @@ if __name__ == "__main__":
             print(Fore.RED + "Config is not ready! Please edit config.json and try again...");sleep(2)
             print(Fore.RED + "Exiting...");sleep(1)
             exit()
-        sleep(2)
+        print(Fore.BLUE + "Author: hunter discord (kontragerillagdu)");sleep(2)
         print(Fore.GREEN+ "config.json is ready and all combinations will be saved in combinations.db");sleep(2)
         print(Fore.RED+"Attention!", Fore.MAGENTA + ": If you close the program will lost all progress. Pls wait for finishing...");sleep(2)
         print(Fore.BLUE + "If you want to stop the program, press Ctrl+C");sleep(2)

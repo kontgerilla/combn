@@ -1,6 +1,10 @@
 import json
 from itertools import product
 
+
+# by hunter
+
+
 # All comb
 def combiner(v, n, pre='', suf=''):
     """

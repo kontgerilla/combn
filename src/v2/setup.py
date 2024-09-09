@@ -16,7 +16,7 @@ def create_database(db_name):
     return True
 
 
-def create_config():
+def create_config(db_name):
     default_config = {
         "lower_letters": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
         "upper_letters": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
@@ -26,7 +26,7 @@ def create_config():
         "digit": True,
         "space": True,
         "length": 5,
-        "db_name": "combinations.db"
+        "db_name": db_name
     }
     while True:
         config_file = "config.json"
@@ -43,12 +43,13 @@ def create_config():
         else:
             print("Config file already exists.")
             break
+    return True
 # run this func if you want to create a new database
 while True:
     try:
         db_name = input("Enter database name: ")
         db_name += ".db"
-        if create_database(db_name):
+        if create_database(db_name) and create_config(db_name):
             break
     except:
         continue

@@ -21,11 +21,14 @@ def load_config(config_file):
         print(Fore.RED + "Exiting...")
         exit()
 def save_combination(db_name, combination_data):
+    print(Fore.GREEN+ "İşlem bitti lütfen kayıt olmasını bekleyiniz")
     conn = sqlite3.connect(db_name)
     c = conn.cursor()
     c.execute('''INSERT INTO combinations (password, length, symbol, space, sha256) VALUES (?, ?, ?, ?, ?)''', combination_data)
     conn.commit()
     conn.close()
+    print(Fore.GREEN+ "Kaydedildi programı kapatabilirsiniz")
+    sleep(10000)
 
 def generate_combinations(letters, length):
     if length == 0:

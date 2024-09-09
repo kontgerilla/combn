@@ -85,7 +85,7 @@ if __name__ == "__main__":
             print(Fore.RED + "Exiting...");sleep(1)
             exit()
         print(Fore.BLUE + "Author: hunter discord (kontragerillagdu)");sleep(2)
-        print(Fore.GREEN+ "config.json is ready and all combinations will be saved in combinations.db");sleep(2)
+        print(Fore.GREEN+ f"config.json is ready and all combinations will be saved in {config['db_name']} ");sleep(2)
         print(Fore.RED+"Attention!", Fore.MAGENTA + ": If you close the program will lost all progress. Pls wait for finishing...");sleep(2)
         print(Fore.BLUE + "If you want to stop the program, press Ctrl+C");sleep(2)
         print(Fore.GREEN + "Generating combinations...");sleep(1)

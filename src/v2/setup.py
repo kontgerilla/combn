@@ -16,7 +16,7 @@ def create_database(db_name):
     return True
 
 
-def create_config(db_name):
+def create_config(db_name, length):
     default_config = {
         "lower_letters": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
         "upper_letters": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
@@ -25,7 +25,7 @@ def create_config(db_name):
         "symbol": True,
         "digit": True,
         "space": True,
-        "length": 5,
+        "length": length,
         "db_name": db_name
     }
     while True:
@@ -49,7 +49,8 @@ while True:
     try:
         db_name = input("Enter database name: ")
         db_name += ".db"
-        if create_database(db_name) and create_config(db_name):
+        length = int(input("Enter length(number): "))
+        if create_database(db_name) and create_config(db_name, length):
             break
     except:
         continue

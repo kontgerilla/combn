@@ -74,10 +74,10 @@ def generate_and_save_combinations(config):
 
 def is_config_ready(config):
         if "config.json" not in listdir():return False
-        if 'lower_letters' in config and 'upper_letters' in config \
+        elif 'lower_letters' in config and 'upper_letters' in config \
         and 'digits' in config and 'symbols' in config and 'symbol' in config\
         and 'space' in config and 'length' in config and 'db_name' in config:return True
-        else:return False
+            
 if __name__ == "__main__":
     config = load_config('config.json')
 

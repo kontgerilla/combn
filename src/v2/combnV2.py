@@ -72,16 +72,17 @@ def generate_and_save_combinations(config):
         save_combination(db_name, data)
 
 
-config = load_config('config.json')
-def is_config_ready():
+def is_config_ready(config):
         if "config.json" not in listdir():return False
         if 'lower_letters' in config and 'upper_letters' in config \
         and 'digits' in config and 'symbols' in config and 'symbol' in config\
         and 'space' in config and 'length' in config and 'db_name' in config:return True
         else:return False
 if __name__ == "__main__":
+    config = load_config('config.json')
+
     try:
-        if not is_config_ready():
+        if not is_config_ready(config):
             print(Fore.RED + "Config is not ready! Please edit config.json and try again...");sleep(2)
             print(Fore.RED + "Exiting...");sleep(1)
             exit()
